@@ -1,0 +1,22 @@
+howapiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: siddhi
+  labels:
+    app: siddhi
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: siddhi
+  template:
+    metadata:
+      labels:
+        app: siddhi
+    spec:
+      containers:
+      - name: siddhi-container
+        image: siddhi:0.1
+        ports:
+        - containerPort: 8080
+
