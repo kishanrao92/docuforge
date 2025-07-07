@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 )
@@ -18,7 +17,6 @@ func NewLocalLLMProvider(model string) *LocalLLMProvider {
 }
 
 func (l *LocalLLMProvider) GenerateDocumentation(ctx context.Context, prompt string) (string, error) {
-	fmt.Println("Inside local gendocs")
 	requestBody := map[string]string{
 		"model":  l.Model,
 		"prompt": prompt,
@@ -54,6 +52,5 @@ func (l *LocalLLMProvider) GenerateDocumentation(ctx context.Context, prompt str
 		fullResponse += result.Response
 	}
 
-	fmt.Printf("fullResponse is %s", fullResponse)
 	return fullResponse, nil
 }

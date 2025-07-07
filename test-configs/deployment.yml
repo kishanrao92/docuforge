@@ -1,22 +1,22 @@
 howapiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: siddhi
+  name: dummy
   labels:
-    app: siddhi
+    app: dummy
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: siddhi
+      app: dummy
   template:
     metadata:
       labels:
-        app: siddhi
+        app: dummy
     spec:
       containers:
-      - name: siddhi-container
-        image: siddhi:0.1
+      - name: dummy-container
+        image: dummy:0.1
         ports:
         - containerPort: 8080
 
